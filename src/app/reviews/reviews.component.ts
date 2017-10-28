@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  //selector: 'app-reviews',
-  // selector:'[app-reviews]', attribute way
-  selector:'.app-reviews', //class way
+  selector: 'app-reviews',
   templateUrl: './reviews.component.html',
-  // styleUrls: ['./reviews.component.css']
-  styles:[`
-  p {
-    color: red;
-}`]
+  styleUrls: ['./reviews.component.css']
+  
 })
 export class ReviewsComponent implements OnInit {
 

@@ -1,6 +1,23 @@
 <h1>Movies Component</h1>
+Movie Id:- {{movieId}}, Movie Name:- {{movieName}}, DirectorName:- {{getDirectorName()}}
+<!-- <input type="text" class="form-control" (input)="onUserEntry($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="userEntry">
+<p [ngStyle]="{backgroundColor:fetchColor()}">{{userEntry}}</p>
+<br>
+<button class="btn btn-primary" (click)="onMovieAdded()" [disabled]="!addNewMovie">Add New Movie</button> State:- <span [innerText]="addNewMovie"></span>
+<!-- <p>{{movieAdditionStatus}}</p> -->
+<p *ngIf="addornot; else noMovie">Movie Added with name:- {{userEntry}}</p>
+<ng-template #noMovie>
+    <p>
+        No Movie Added!
+    </p>
+</ng-template>
 <hr>
-<!-- <app-reviews></app-reviews> -->
-<!-- <div app-reviews></div>
-<div app-reviews></div> -->
-<div class="app-reviews"></div>
+<div>
+    <h3>Movies List</h3>
+    <ul>
+        <li *ngFor="let m of movies">{{m}}</li>
+    </ul>
+</div>
+<hr>
+<app-reviews></app-reviews>
